@@ -311,15 +311,3 @@ if 'report' in st.session_state:
     with st.expander('Model and usage'):
         st.write(report['model'])
         st.json(report['usage'] or {})
-
-with st.expander('How the assessment works'):
-    st.write('The selected model receives all photos together. A fixed part vocabulary keeps names consistent. '
-             'The app counts unique, observed body panels; possible findings, lamps, glass, wheels and other '
-             'components do not increase the panel count. Bumper covers are counted as panels in this demo.')
-    st.write('Repair size is assessed separately from the images: Small means minor cosmetic work; '
-             'Medium means localised damage needing substantive repair; Large means severe deformation, '
-             'extensive damage or complex repair. These are demo categories, not an industry standard.')
-    st.write('Labour hours are rough photo-based estimates, not a repair quotation or elapsed days. '
-             'A repairer must inspect hidden damage and confirm the work required.')
-    st.write('Images are resized to a maximum 768 pixels and re-encoded without EXIF metadata. '
-             'The app does not write photos to disk. Requests use store=False; this is not a zero-retention guarantee.')
