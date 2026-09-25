@@ -308,6 +308,3 @@ if 'report' in st.session_state:
                        file_name='vehicle-assessment.json', mime='application/json', disabled=not valid_hours)
     st.caption('The download includes your reviewed estimate and the unchanged original AI assessment. '
                'Edits are held only in this session; download them before clearing or leaving the app.')
-    with st.expander('Model and usage'):
-        st.write(report['model'])
-        st.json(report['usage'] or {})
